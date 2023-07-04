@@ -18,6 +18,7 @@ header {
     justify-content: space-between;
     padding: 3vh;
     overflow: hidden;
+    border-bottom: 1px solid var(--bg-emphasis);
 }
 
 header ul {
@@ -51,4 +52,35 @@ main {
     border-radius: 10px;
     border: 1px solid var(--bg-sec);
 }
+.listagem {
+    width: 100%;
+    margin: 15px 30px;
+    display: flex;
+    justify-content: center;
+}
+.tabela {
+    border-collapse: collapse;
+    width: 100%;
+}
+.tb-linha {
+    height: 2em;
+    display: flex;
+    width: 100%;
+}
+.tb-coluna {
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+}
 
+.tb-coluna:first-child {
+    width: 15px;
+    margin-right: 10px;
+}
+
+td, tr {
+    border:none;
+}
+tr:nth-child(even) {
+    background-color: var(--bg-sec);
+}

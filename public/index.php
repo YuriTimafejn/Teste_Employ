@@ -1,5 +1,9 @@
 <?php
 
+use controllers\toDoList;
+
+include_once "../src/controllers/toDoList.php";
+
 function dd ($var): void {
     echo '<pre>';
     var_dump($var);
@@ -8,7 +12,15 @@ function dd ($var): void {
 }
 //dd($_SERVER);
 
+$controller = new toDoList();
+
 if($_SERVER['REQUEST_URI'] === '/'){
-    include_once "../src/templates/toDoList.php";
+    echo $controller->index();
+    exit();
+} elseif ($_SERVER['REQUEST_URI'] === '/concluido') {
+    echo $controller->tarefaConcluidas();
+    exit();
+} else {
+    echo $controller->index();
     exit();
 }
