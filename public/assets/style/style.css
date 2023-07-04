@@ -1,0 +1,54 @@
+:root {
+    --bg-std: #f4f4f4;
+    --bg-sec: #f0e5c9;
+    --bg-emphasis: #a68c69;
+    --font-std: #594433;
+    --font-emphasis: #9ba657
+}
+
+html, body {
+    all: initial;
+    color: var(--font-std);
+    background-color: var(--bg-std);
+}
+
+header {
+    display: flex;
+    font-size: 1.5em;
+    justify-content: space-between;
+    padding: 3vh;
+    overflow: hidden;
+}
+
+header ul {
+    display: flex;
+}
+header ul li {
+    list-style-type: none;
+    padding-right: 15px;
+}
+header a {
+    color: var(--font-std);
+    text-decoration: none;
+}
+
+main {
+    margin: 1em 3em 0 3em;
+}
+.input-form {
+    display: flex;
+    margin: 5px 0;
+    width: 100%;
+}
+.input-form input{
+    height: 2em;
+}
+.input-form input,
+.input-form textarea {
+    width: 100%;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-radius: 10px;
+    border: 1px solid var(--bg-sec);
+}
+
