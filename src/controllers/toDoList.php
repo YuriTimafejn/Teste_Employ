@@ -2,10 +2,19 @@
 
 namespace controllers;
 
+use services\ToDoService;
+
 class toDoList
 {
+    private ToDoService $service;
+
+    public function __construct()
+    {
+        $this->service = new ToDoService();
+    }
+
     public function index() {
-        // Buscar repositorio para listagem
+        $tasks = $this->service->findAllNotDoneYet();
         ob_start();
         include_once "../src/templates/toDoList.php";
 

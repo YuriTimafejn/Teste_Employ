@@ -3,6 +3,8 @@
 use controllers\toDoList;
 
 include_once "../src/controllers/toDoList.php";
+include_once "../src/services/ToDoService.php";
+include_once "../src/utils/Database.php";
 
 function dd ($var): void {
     echo '<pre>';
@@ -14,13 +16,14 @@ function dd ($var): void {
 
 $controller = new toDoList();
 
-if($_SERVER['REQUEST_URI'] === '/'){
+$url = rtrim($_SERVER['REQUEST_URI']);
+
+if($url === '/'){
     echo $controller->index();
     exit();
-} elseif ($_SERVER['REQUEST_URI'] === '/concluido') {
+} elseif ($url === '/concluido') {
     echo $controller->tarefaConcluidas();
     exit();
 } else {
-    echo $controller->index();
-    exit();
+    header('Location: /');
 }

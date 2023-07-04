@@ -18,7 +18,8 @@ header {
     justify-content: space-between;
     padding: 3vh;
     overflow: hidden;
-    border-bottom: 1px solid var(--bg-emphasis);
+    background-color: var(--bg-sec);
+    align-items: center;
 }
 
 header ul {
@@ -32,6 +33,16 @@ header a {
     color: var(--font-std);
     text-decoration: none;
 }
+.logo {
+    font-family: 'Gloria Hallelujah', cursive;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: var(--font-emphasis);
+}
+
 
 main {
     margin: 1em 3em 0 3em;
@@ -72,15 +83,22 @@ main {
     display: flex;
     align-items: center;
 }
-
 .tb-coluna:first-child {
     width: 15px;
     margin-right: 10px;
 }
-
+.tb-center {
+    text-align: center;
+    vertical-align: center;
+}
 td, tr {
     border:none;
 }
 tr:nth-child(even) {
     background-color: var(--bg-sec);
+}
+
+.data {
+    width: 3.5em;
+    padding: 0 10px;
 }

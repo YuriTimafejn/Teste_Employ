@@ -7,31 +7,31 @@ include_once 'header.php';
     <div class="listagem">
         <table class="tabela">
             <thead>
-            <tr>
-                <th>Data Inclusão</th>
+            <tr style="height: 1.7em;">
+                <th class="data">Data Inclusão</th>
                 <th>Tarefa</th>
                 <th>Local</th>
-                <th>Data Conclusão</th>
+                <th class="data">Data Conclusão</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>20/03/2022</td>
-                <td>Tarefa XYZ</td>
-                <td>Praça da Sé</td>
-                <td>21/03/2022</td>
+            <tr style="height: 1.7em;">
+                <td class="data">20/03/2022</td>
+                <td class="tb-center">Tarefa XYZ</td>
+                <td class="tb-center">Praça da Sé</td>
+                <td class="data">21/03/2022</td>
             </tr>
-            <tr>
-                <td>27/03/2022</td>
-                <td>Tarefa ABC</td>
-                <td></td>
-                <td>27/03/2022</td>
+            <tr style="height: 1.7em;">
+                <td class="data">27/03/2022</td>
+                <td class="tb-center">Tarefa ABC</td>
+                <td class="tb-center"></td>
+                <td class="data">27/03/2022</td>
             </tr>
-            <tr>
-                <td>05/09/2022</td>
-                <td>Tarefa 123</td>
-                <td>Casa de fulana</td>
-                <td>15/10/2022</td>
+            <tr style="height: 1.7em;">
+                <td class="data">05/09/2022</td>
+                <td class="tb-center">Tarefa 123</td>
+                <td class="tb-center">Casa de fulana</td>
+                <td class="data">15/10/2022</td>
             </tr>
             </tbody>
         </table>
