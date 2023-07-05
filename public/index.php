@@ -2,11 +2,12 @@
 
 use controllers\toDoList;
 
-include_once "../src/controllers/toDoList.php";
-include_once "../src/services/ToDoService.php";
-include_once "../src/utils/Database.php";
-include_once "../src/utils/Utilities.php";
-include_once "../src/entities/Task.php";
+require_once "../src/controllers/toDoList.php";
+require_once "../src/services/ToDoService.php";
+require_once "../src/utils/Database.php";
+require_once "../src/utils/Utilities.php";
+require_once "../src/utils/TaskFactory.php";
+require_once "../src/entities/Task.php";
 
 $controller = new toDoList();
 

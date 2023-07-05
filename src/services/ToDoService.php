@@ -6,6 +6,7 @@ use entities\Task;
 use Exception;
 use PDO;
 use utils\Database;
+use utils\TaskFactory;
 
 include_once "../utils/Database.php";
 
@@ -28,12 +29,19 @@ class ToDoService
         return $this->database;
     }
 
-    public function findAllNotDoneYet(): false|array
+    public function findAllNotDoneYet(): ?array
     {
         $sql = trim("SELECT t.* FROM TAREFAS t WHERE t.FLAG_CONCLUIDO = 0");
 
         $stage = $this->database->query($sql);
-        return $stage->fetchAll(PDO::FETCH_ASSOC);
+        $results = $stage->fetchAll(PDO::FETCH_ASSOC);
+
+        if (!$results)
+        {
+            return null;
+        }
+
+        return TaskFactory::returnCollection($results);
     }
 
     public function findAllDone(): ?array
@@ -44,25 +52,11 @@ class ToDoService
         $results = $stage->fetchAll(PDO::FETCH_ASSOC);
 
         if (!$results)
-            return null;
-
-        $tasks = [];
-
-        foreach ($results as $result)
         {
-            $task = new Task(
-                $result['DATA_REGISTRO'],
-                $result['DESCRICAO'],
-                $result['LOCAL'],
-                $result['OBSERVACAO'],
-                $result['ID'],
-                $result['FLAG_CONCLUIDO'],
-                $result['DATA_CONCLUSAO']
-            );
-            $tasks[] = $task;
+            return null;
         }
 
-        return $tasks;
+        return TaskFactory::returnCollection($results);
     }
 
     public function findTask($id): ?Task
@@ -76,15 +70,7 @@ class ToDoService
         if (!$result)
             return null;
 
-        return new Task(
-            $result['DATA_REGISTRO'],
-            $result['DESCRICAO'],
-            $result['LOCAL'],
-            $result['OBSERVACAO'],
-            $result['ID'],
-            $result['FLAG_CONCLUIDO'],
-            $result['DATA_CONCLUSAO']
-        );
+        return TaskFactory::returnTask($result);
     }
 
     public function createTask($description, $locale, $notes): false|int
