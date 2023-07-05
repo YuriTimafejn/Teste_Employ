@@ -29,7 +29,7 @@ class ToDoService
 
     public function findAllNotDoneYet(): false|array
     {
-        $sql = "SELECT t.* FROM TAREFAS t WHERE t.FLAG_CONCLUIDO = 0";
+        $sql = trim("SELECT t.* FROM TAREFAS t WHERE t.FLAG_CONCLUIDO = 0");
 
         $stage = $this->database->query($sql);
         return $stage->fetchAll(PDO::FETCH_OBJ);
@@ -37,7 +37,7 @@ class ToDoService
 
     public function findAllDone(): false|array
     {
-        $sql = "SELECT t.* FROM TAREFAS t WHERE FLAG_CONCLUIDO = 1";
+        $sql = trim("SELECT t.* FROM TAREFAS t WHERE t.FLAG_CONCLUIDO = 1");
 
         $stage = $this->database->query($sql);
         return $stage->fetchAll(PDO::FETCH_OBJ);
@@ -45,9 +45,42 @@ class ToDoService
 
     public function findTask($id)
     {
-        $sql = "SELECT t.* FROM TAREFAS t WHERE t.ID = ?";
+        $sql = trim("SELECT t.* FROM TAREFAS t WHERE t.ID = ?");
 
         $stage = $this->database->prepare($sql);
         return $stage->execute($id);
+    }
+
+    public function createTask()
+    {
+        $sql = trim("INSERT INTO TAREFAS 
+                                (DATA_REGISTRO, DATA_CONCLUSAO, DESCRICAO, LOCAL, OBSERVACAO, FLAG_CONCLUIDO)
+                            VALUES (CURRENT_DATE,NULL,?,?,?,0)");
+
+        // return 'id'
+    }
+
+    public function finishTask($id)
+    {
+        $sql = trim("UPDATE TAREFAS 
+                SET 
+                    FLAG_CONCLUIDO = 1,
+                    DATA_CONCLUSAO = CURRENT_DATE
+                WHERE ID = ?");
+    }
+
+    public function editTask($id)
+    {
+        $sql = trim("UPDATE TAREFAS
+                            SET
+                                DESCRICAO = ?,
+                                LOCAL = ?,
+                                DESCRICAO = ?
+                            WHERE ID = ?");
+    }
+
+    public function deleteTask($id)
+    {
+        $sql = trim("DELETE FROM TAREFAS WHERE ID = ?");
     }
 }

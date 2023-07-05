@@ -22,7 +22,7 @@ class toDoList
     }
 
     public function tarefaConcluidas() {
-        // Buscar repositorio para listagem
+        $task = $this->service->findAllDone();
         ob_start();
         include_once __DIR__ . "/../templates/concluido.php";
 
