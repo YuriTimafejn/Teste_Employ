@@ -21,12 +21,11 @@ include_once "header.php";
         <table class="tabela">
 
             <?php
-                foreach ($tasks as $task) { ?>
-
-            <tr class="tb-linha">
-                <td class="tb-coluna">
-                    <input type="checkbox" name="" id="<?= $task->getId(); ?>" value="false"></td>
-                <td class="tb-coluna"><?= $task->getDescription(); ?></td>
+                foreach ($tasks as $task) {
+                    \utils\Utilities::dd($task);
+                    ?>
+            <tr onclick="divFormEdicao(<?= $task->getId(); ?>,<?= json_encode($task); ?> )">
+                <td><?= $task->getDescription(); ?></td>
             </tr>
 
             <?php
@@ -40,7 +39,7 @@ include_once "header.php";
     ?>
 </main>
 
-<script src="assets/js/main.js" type="module"></script>
+
 
 <?php
 

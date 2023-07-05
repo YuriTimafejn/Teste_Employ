@@ -13,8 +13,8 @@
     transform: translate(-50%, -50%);
     width: 450px;
     height: 340px;
-    background-color: var(--bg-sec);
-    border: 2px solid var(--bg-emphasis);
+    background-color: var(--bg-std);
+    border: 2px solid var(--font-emphasis);
     border-radius: 10px;
     flex-direction: column;
     align-items: center;

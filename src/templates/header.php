@@ -14,8 +14,6 @@
     <link rel="stylesheet" href="assets/style/style.css">
     <link rel="stylesheet" href="assets/style/toDoList.css">
     <title>Meus afazeres</title>
-
-    <script src="assets/js/eventos.js" type="module"></script>
 </head>
 <body>
 <header>
@@ -26,3 +24,11 @@
     </ul>
 </header>
 <div class="mensagens"></div>
+<div class="div-novo">
+    <button id="btn-novo" class="btn" onclick="divFormNovo()">
+        &nbsp;Novo&nbsp;Afazer&nbsp;
+    </button>
+</div>
+
+<?php
+    include_once 'formTask.php';
