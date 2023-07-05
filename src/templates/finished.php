@@ -1,6 +1,10 @@
 <?php
 
+use utils\utilities;
+
 include_once 'header.php';
+
+Utilities::dd($tasks);
 ?>
 
 <main>

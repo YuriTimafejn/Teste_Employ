@@ -5,14 +5,7 @@ use controllers\toDoList;
 include_once "../src/controllers/toDoList.php";
 include_once "../src/services/ToDoService.php";
 include_once "../src/utils/Database.php";
-
-function dd ($var): void {
-    echo '<pre>';
-    var_dump($var);
-    echo '</pre>';
-    die();
-}
-//dd($_SERVER);
+include_once "../src/utils/Utilities.php";
 
 $controller = new toDoList();
 

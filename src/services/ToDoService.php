@@ -47,8 +47,6 @@ class ToDoService
     {
         $sql = trim("SELECT t.* FROM TAREFAS t WHERE t.ID = ?");
 
-        $stage = $this->database->prepare($sql);
-        return $stage->execute($id);
     }
 
     public function createTask()
