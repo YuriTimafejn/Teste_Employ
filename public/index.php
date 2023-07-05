@@ -22,7 +22,7 @@ if($url === '/'){
     echo $controller->index();
     exit();
 } elseif ($url === '/concluido') {
-    echo $controller->tarefaConcluidas();
+    echo $controller->finishedTasks();
     exit();
 } else {
     header('Location: /');

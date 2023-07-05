@@ -21,10 +21,10 @@ class toDoList
         return ob_get_clean();
     }
 
-    public function tarefaConcluidas() {
+    public function finishedTasks() {
         $task = $this->service->findAllDone();
         ob_start();
-        include_once __DIR__ . "/../templates/concluido.php";
+        include_once __DIR__ . "/../templates/finished.php";
 
         return ob_get_clean();
     }
