@@ -1,5 +1,5 @@
 INSERT INTO TAREFAS (DATA_REGISTRO, DATA_CONCLUSAO, DESCRICAO, LOCAL, OBSERVACAO, FLAG_CONCLUIDO)
-VALUES (STR_TO_DATE('20/04/2021', '%d/%m/%Y'), NULL, 'Comprar tangerinas na venda', 'Mercado Piriti', 'Não comprar apenas as extremamente maduras', 1);
+VALUES (STR_TO_DATE('20/04/2021', '%d/%m/%Y'), NULL, 'Comprar tangerinas na venda', 'Mercado Piriti', 'Não comprar apenas as extremamente maduras', 0);
 
 INSERT INTO TAREFAS (DATA_REGISTRO, DATA_CONCLUSAO, DESCRICAO, LOCAL, OBSERVACAO, FLAG_CONCLUIDO)
 VALUES(STR_TO_DATE('13/08/2022', '%d/%m/%Y'),STR_TO_DATE('13/08/2022', '%d/%m/%Y'),'Levar cachorro para passear','Praça das crianças',NULL, 1);

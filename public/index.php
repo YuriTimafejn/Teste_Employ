@@ -6,6 +6,7 @@ include_once "../src/controllers/toDoList.php";
 include_once "../src/services/ToDoService.php";
 include_once "../src/utils/Database.php";
 include_once "../src/utils/Utilities.php";
+include_once "../src/entities/Task.php";
 
 $controller = new toDoList();
 
