@@ -8,10 +8,18 @@ include_once 'header.php';
 ?>
 
 <main>
+    <?php if (!$tasks){ ?>
+
+    <div>Nenhuma tarefa concluida até o momento :( </div>
+
+    <?php
+    } else {
+    ?>
+
     <div class="listagem">
         <table class="tabela">
             <thead>
-            <tr style="height: 1.7em;">
+            <tr style="height: 1.7em; border-bottom: 1px solid var(--font-std)">
                 <th class="data">Data Inclusão</th>
                 <th>Tarefa</th>
                 <th>Local</th>
@@ -19,27 +27,27 @@ include_once 'header.php';
             </tr>
             </thead>
             <tbody>
-            <tr style="height: 1.7em;">
-                <td class="data">20/03/2022</td>
-                <td class="tb-center">Tarefa XYZ</td>
-                <td class="tb-center">Praça da Sé</td>
-                <td class="data">21/03/2022</td>
-            </tr>
-            <tr style="height: 1.7em;">
-                <td class="data">27/03/2022</td>
-                <td class="tb-center">Tarefa ABC</td>
-                <td class="tb-center"></td>
-                <td class="data">27/03/2022</td>
-            </tr>
-            <tr style="height: 1.7em;">
-                <td class="data">05/09/2022</td>
-                <td class="tb-center">Tarefa 123</td>
-                <td class="tb-center">Casa de fulana</td>
-                <td class="data">15/10/2022</td>
-            </tr>
+
+            <?php
+                foreach ($tasks as $task) { ?>
+                <tr style="height: 1.7em;">
+                    <td class="data"><?= $task->getDataStart(); ?></td>
+                    <td class="tb-center"><?= $task->getDescription();?></td>
+                    <td class="tb-center"><?= $task->getLocale(); ?></td>
+                    <td class="data"><?= $task->getDateFinished(); ?></td>
+                </tr>
+            <?php
+                }
+            ?>
+
             </tbody>
         </table>
     </div>
+
+    <?php
+    }
+    ?>
+
 </main>
 
 <?php

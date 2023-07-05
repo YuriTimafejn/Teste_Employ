@@ -4,43 +4,40 @@ use utils\utilities;
 
 include_once "header.php";
 
-Utilities::dd($tasks);
+//Utilities::dd($tasks);
 ?>
 
 <main>
     <div class="tarefas">
         <div class="dataAtual">Data: 01/01/2000</div>
     </div>
-
+    <?php if(!$tasks) {
+        ?>
+    <div> Todas as tarefa concluidas :) </div>
+    <?php
+    } else {
+    ?>
     <div class="listagem">
         <table class="tabela">
+
+            <?php
+                foreach ($tasks as $task) { ?>
+
             <tr class="tb-linha">
                 <td class="tb-coluna">
-                    <input type="checkbox" name="" id="" value="false"></td>
-                <td class="tb-coluna">Tarefa 01</td>
+                    <input type="checkbox" name="" id="<?= $task->getId(); ?>" value="false"></td>
+                <td class="tb-coluna"><?= $task->getDescription(); ?></td>
             </tr>
-            <tr class="tb-linha">
-                <td class="tb-coluna">
-                    <input type="checkbox" name="" id="" value="false"></td>
-                <td class="tb-coluna">Tarefa 02</td>
-            </tr>
-            <tr class="tb-linha">
-                <td class="tb-coluna">
-                    <input type="checkbox" name="" id=""></td>
-                <td class="tb-coluna">Tarefa 03</td>
-            </tr>
-            <tr class="tb-linha">
-                <td class="tb-coluna">
-                    <input type="checkbox" name="" id=""></td>
-                <td class="tb-coluna">Tarefa 04</td>
-            </tr>
-            <tr  class="tb-linha">
-                <td class="tb-coluna">
-                    <input type="checkbox" name="" id=""></td>
-                <td class="tb-coluna">Tarefa 05</td>
-            </tr>
+
+            <?php
+                }
+            ?>
+
         </table>
     </div>
+    <?php
+    }
+    ?>
 </main>
 
 <script src="assets/js/main.js" type="module"></script>

@@ -2,7 +2,7 @@ function dataAtual() {
     const elementoDataAtual = document.querySelector('.dataAtual');
     const dataAgora = new Date();
 
-    const dia = dataAgora.getDay();
+    const dia = dataAgora.getDate();
     const mes = dataAgora.getMonth() +1;
     const ano = dataAgora.getFullYear();
 

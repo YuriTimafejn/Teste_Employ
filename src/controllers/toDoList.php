@@ -24,7 +24,7 @@ class toDoList
     public function finishedTasks() {
         $tasks = $this->service->findAllDone();
         ob_start();
-        include_once __DIR__ . "/../templates/finished.php";
+        include_once __DIR__ . "/../templates/finishedList.php";
 
         return ob_get_clean();
     }
