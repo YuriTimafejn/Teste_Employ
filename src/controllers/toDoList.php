@@ -16,7 +16,7 @@ class toDoList
     public function index() {
         $tasks = $this->service->findAllNotDoneYet();
         ob_start();
-        include_once "../src/templates/toDoList.php";
+        include_once __DIR__ . "/../templates/toDoList.php";
 
         return ob_get_clean();
     }
@@ -24,7 +24,7 @@ class toDoList
     public function tarefaConcluidas() {
         // Buscar repositorio para listagem
         ob_start();
-        include_once "../src/templates/concluido.php";
+        include_once __DIR__ . "/../templates/concluido.php";
 
         return ob_get_clean();
     }

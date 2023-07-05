@@ -13,7 +13,7 @@ class Database extends \PDO
 
     public function __construct()
     {
-        $this->host = (!empty($_ENV['DB_HOST'])) ? $_ENV['DB_HOST'] : "localhost";
+        $this->host = (!empty($_ENV['DB_HOST'])) ? $_ENV['DB_HOST'] : "127.0.0.1";
         $this->bancoDeDados = (!empty($_ENV['DB_NAME'])) ? $_ENV['DB_NAME'] : "afazeres";
         $this->usuario = (!empty($_ENV['DB_USER'])) ? $_ENV['DB_USER'] : "root";
         $this->senha = (!empty($_ENV['DB_PWD'])) ? $_ENV['DB_PWD'] : "toor";
