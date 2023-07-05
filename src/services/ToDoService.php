@@ -8,8 +8,6 @@ use PDO;
 use utils\Database;
 use utils\TaskFactory;
 
-include_once "../utils/Database.php";
-
 class ToDoService
 {
     private Database $database;

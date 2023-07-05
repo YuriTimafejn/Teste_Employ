@@ -3,6 +3,7 @@
 namespace entities;
 
 use DateTimeImmutable;
+use utils\utilities;
 
 class Task
 {
@@ -45,14 +46,14 @@ class Task
         return $this;
     }
 
-    public function getDataStart(): DateTimeImmutable
+    public function getDataStart(): ?string
     {
-        return $this->dataStart;
+        return Utilities::dateToString($this->dataStart);
     }
 
-    public function getDateFinished(): DateTimeImmutable
+    public function getDateFinished(): ?string
     {
-        return $this->dateFinished;
+        return Utilities::dateToString($this->dateFinished);
     }
 
     public function setDateFinished(DateTimeImmutable $dateFinished): Task
@@ -72,7 +73,7 @@ class Task
         return $this;
     }
 
-    public function getLocale(): string
+    public function getLocale(): ?string
     {
         return $this->locale;
     }

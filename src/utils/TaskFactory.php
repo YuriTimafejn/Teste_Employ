@@ -6,7 +6,7 @@ use entities\Task;
 
 class TaskFactory
 {
-    public static function returnTask($dbReturn)
+    public static function returnTask($dbReturn): Task
     {
         return new Task(
             $dbReturn['DATA_REGISTRO'],
@@ -19,7 +19,7 @@ class TaskFactory
         );
     }
 
-    public static function returnCollection($dbReturns)
+    public static function returnCollection($dbReturns): array
     {
         $collection = [];
 
