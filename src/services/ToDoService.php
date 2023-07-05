@@ -128,4 +128,23 @@ class ToDoService
 
         return $stage->execute();
     }
+
+    public function saveTask(Task $task)
+    {
+        $sql = trim("
+                           UPDATE TAREFAS
+                           SET
+                               DATA_REGISTRO = {$task->getDataStart()},
+                               DATA_CONCLUSAO = {$task->getDateFinished()},
+                               DESCRICAO = {$task->getDescription()},
+                               LOCAL = {$task->getLocale()},
+                               OBSERVACAO = {$task->getNotes()},
+                               FLAG_CONCLUIDO = {$task->isFlagFinish()}
+                           WHERE ID = {$task->getId()}
+        ");
+
+        $stage = $this->database->prepare($sql);
+
+        return $stage->execute();
+    }
 }
