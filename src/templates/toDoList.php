@@ -38,8 +38,7 @@ include_once "header.php";
     ?>
 </main>
 
-
-
+<script src="assets/js/main.js" type="text/javascript"></script>
 <?php
 
 include_once "botton.php";

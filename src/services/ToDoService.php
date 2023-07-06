@@ -134,16 +134,15 @@ class ToDoService
         $sql = trim("
                            UPDATE TAREFAS
                            SET
-                               DATA_REGISTRO = {$task->getDataStart()},
-                               DATA_CONCLUSAO = {$task->getDateFinished()},
-                               DESCRICAO = {$task->getDescription()},
-                               LOCAL = {$task->getLocale()},
-                               OBSERVACAO = {$task->getNotes()},
-                               FLAG_CONCLUIDO = {$task->isFlagFinish()}
+                               DESCRICAO = '{$task->getDescription()}',
+                               LOCAL = '{$task->getLocale()}',
+                               OBSERVACAO = '{$task->getNotes()}'
                            WHERE ID = {$task->getId()}
         ");
+        //\utils\utilities::dd($sql);
 
         $stage = $this->database->prepare($sql);
+
 
         return $stage->execute();
     }

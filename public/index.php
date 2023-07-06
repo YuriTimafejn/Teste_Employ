@@ -28,6 +28,30 @@ if($url === '/'){
     header('Content-Type: application/json');
     echo $json;
     exit();
+} elseif (preg_match('/^\/operacoes\/(\d+)\/(salvar|excluir|concluir)$/', $url, $matches)) {
+    $id = $matches[1];
+    $acao = $matches[2];
+
+    switch ($acao) {
+        case 'salvar':
+            $data = json_decode(file_get_contents('php://input'), true);
+            $operations->saveTask($data, $id);
+            header('Content-Type: application/json');
+            echo json_encode(['message' => 'Tarefa salva']);
+            break;
+        case 'excluir':
+            $operations->deleteTask($id);
+            header('Content-Type: application/json');
+            echo json_encode(['message' => 'Tarefa removida']);
+            break;
+        case 'concluir':
+            $operations->setFlagFinish($id);
+            header('Content-Type: application/json');
+            echo json_encode(['message' => 'Tarefa finalizada']);
+            break;
+    }
+    header('Location: /');
+    exit();
 } else {
     header('Location: /');
     exit();

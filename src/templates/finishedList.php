@@ -30,7 +30,7 @@ include_once 'header.php';
 
             <?php
                 foreach ($tasks as $task) { ?>
-                <tr style="height: 1.7em;">
+                <tr style="height: 1.7em;" onclick="divFormFinalizado(<?= $task->getId(); ?>)">
                     <td class="data"><?= $task->getDataStart(); ?></td>
                     <td class="tb-center"><?= $task->getDescription();?></td>
                     <td class="tb-center"><?= $task->getLocale(); ?></td>

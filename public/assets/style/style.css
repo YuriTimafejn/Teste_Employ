@@ -73,15 +73,12 @@ main {
     border-collapse: collapse;
     width: 100%;
 }
-.tb-linha {
-    height: 2em;
-    display: flex;
-    width: 100%;
-}
-
 .tb-center {
     text-align: center;
     vertical-align: center;
+}
+td {
+    cursor: pointer;
 }
 td, tr {
     border:none;

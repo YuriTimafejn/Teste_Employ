@@ -53,6 +53,8 @@ class Task
 
     public function getDateFinished(): ?string
     {
+        if($this->dateFinished === null)
+            return "NULL";
         return Utilities::dateToString($this->dateFinished);
     }
 
@@ -98,6 +100,13 @@ class Task
     public function isFlagFinish(): bool
     {
         return $this->flagFinish;
+    }
+    public function isFlagFinishString(): string
+    {
+        if ($this->isFlagFinish())
+            return "1";
+
+        return "0";
     }
 
     public function finishTask(): Task
