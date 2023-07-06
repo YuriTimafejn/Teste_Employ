@@ -22,9 +22,8 @@ include_once "header.php";
 
             <?php
                 foreach ($tasks as $task) {
-                    \utils\Utilities::dd($task);
-                    ?>
-            <tr onclick="divFormEdicao(<?= $task->getId(); ?>,<?= json_encode($task); ?> )">
+            ?>
+            <tr onclick="divFormEdicao(<?= $task->getId(); ?>) ">
                 <td><?= $task->getDescription(); ?></td>
             </tr>
 

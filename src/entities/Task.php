@@ -84,7 +84,7 @@ class Task
         return $this;
     }
 
-    public function getNotes(): string
+    public function getNotes(): ?string
     {
         return $this->notes;
     }
@@ -104,5 +104,18 @@ class Task
     {
         $this->flagFinish = self::FLAG_FINISH;
         return $this;
+    }
+
+    public function toJson(): string
+    {
+        return json_encode([
+            'id' => $this->getId(),
+            'dataStart' => $this->getDataStart(),
+            'dataFinished' => $this->getDateFinished(),
+            'description' => $this->getDescription(),
+            'locale' => $this->getLocale(),
+            'notes' => $this->getNotes(),
+            'flagFinish' => $this->isFlagFinish()
+        ]);
     }
 }

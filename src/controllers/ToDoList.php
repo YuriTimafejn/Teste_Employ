@@ -4,7 +4,7 @@ namespace controllers;
 
 use services\ToDoService;
 
-class toDoList
+class ToDoList
 {
     private ToDoService $service;
 

@@ -7,7 +7,7 @@
     <input type="hidden" name="dataInsercao">
     <input type="hidden" name="dataConclusao">
     <div class="input-form"><input type="text" placeholder="Descrição" id="descricao" name="descricao"></div>
-    <div class="input-form"><input type="text" placeholder="Local"id="local" name="local"></div>
+    <div class="input-form"><input type="text" placeholder="Local" id="local" name="local"></div>
     <div class="input-form"><textarea name="notas" id="notas" cols="30" rows="10" placeholder="NOTAS"></textarea></div>
 
     <div class="opcoes">
